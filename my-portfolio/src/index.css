@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-background: 10 10 15; /* #0A0A0F */
+    --color-primary: 0 242 255; /* #00f2ff */
+    --color-secondary: 188 19 254; /* #bc13fe */
+    --color-text: 255 255 255;
+    --color-text-muted: 156 163 175;
+    --color-glass: 255 255 255;
+    --opacity-glass: 0.05;
+    --color-glass-border: 255 255 255;
+    --opacity-glass-border: 0.1;
+  }
+
+  html.light {
+    --color-background: 249 250 251; /* gray-50 */
+    --color-primary: 14 165 233; /* sky-500 - Darker blue for better contrast on white */
+    --color-secondary: 168 85 247; /* purple-500 */
+    --color-text: 17 24 39; /* gray-900 */
+    --color-text-muted: 75 85 99; /* gray-600 */
+    --color-glass: 255 255 255;
+    --opacity-glass: 0.7;
+    --color-glass-border: 229 231 235; /* gray-200 */
+    --opacity-glass-border: 1;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: rgb(var(--color-background));
+    color: rgb(var(--color-text));
+    @apply antialiased transition-colors duration-300;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: rgb(var(--color-background));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-800 rounded-full hover:bg-gray-700 transition-colors;
+  }
+
+  html.light ::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 hover:bg-gray-400;
+  }
+}
+
+@layer utilities {
+  .bg-glass {
+    background-color: rgba(var(--color-glass), var(--opacity-glass));
+    backdrop-filter: blur(12px);
+  }
+
+  .border-glass-border {
+    border-color: rgba(var(--color-glass-border), var(--opacity-glass-border));
+  }
+
+  .text-glow {
+    text-shadow: 0 0 10px rgba(var(--color-primary), 0.5);
+  }
+}
