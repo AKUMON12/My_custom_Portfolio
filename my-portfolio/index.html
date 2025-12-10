@@ -2,15 +2,76 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/Portfolio_favicon.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Portfolio</title>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/Portfolio_favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
 </head>
 
 <body>
-  <div id="root"></div>
-  <script type="module" src="/src/main.tsx"></script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+
+    <script type="module">
+        import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
+        Chatbot.init({
+            chatflowid: "47f7f67a-2508-4b74-8e3e-dd6bb1a3c276",
+            apiHost: "https://cloud.flowiseai.com", /* Using your current Flowise Cloud host */
+            theme: {
+                button: {
+                    backgroundColor: '#16a34a', /* Primary Accent Color (Green) */
+                    right: 30,
+                    bottom: 30,
+                    size: 56, /* Slightly larger button */
+                    dragAndDrop: true,
+                    iconColor: 'white',
+                },
+                tooltip: {
+                    showTooltip: false,
+                    tooltipMessage: 'Hi There 👋! Ask me about Tristan.',
+                    tooltipBackgroundColor: '#16a34a', /* Tooltip matches button */
+                    tooltipTextColor: 'white',
+                    tooltipFontSize: 14
+                },
+                chatWindow: {
+                    showTitle: true,
+                    title: 'Tristan\'s AI Assistant (Groq RAG)',
+                    welcomeMessage: 'Hello! I am Tristan\'s personal AI assistant. Ask me ONLY about his skills, projects, or background.', // Enforcing RAG constraint
+                    backgroundColor: '#0a0a0a', /* Dark chat window background */
+                    fontSize: 16,
+                    starterPrompts: [
+                        "What are Tristan's key skills?",
+                        "Tell me about his IoT projects."
+                    ],
+                    sourceDocsTitle: 'Sources:',
+                    botMessage: {
+                        backgroundColor: '#1f2937', /* Darker gray/blue for bot bubble (good contrast on #0a0a0a) */
+                        textColor: '#e5e7eb', /* Light text color */
+                        showAvatar: false, /* Turned off avatars for cleaner look */
+                    },
+                    userMessage: {
+                        backgroundColor: '#16a34a', /* User message matches primary accent color */
+                        textColor: '#ffffff',
+                        showAvatar: false, /* Turned off avatars for cleaner look */
+                    },
+                    textInput: {
+                        placeholder: 'Ask Tristan\'s AI...',
+                        backgroundColor: '#1f2937', /* Input background matches bot bubble color */
+                        textColor: '#e5e7eb', /* Light text */
+                        sendButtonColor: '#16a34a', /* Send button matches primary accent */
+                        maxChars: 100,
+                        autoFocus: true,
+                    },
+                    footer: {
+                        textColor: '#e5e7eb',
+                        text: 'Powered by',
+                        company: 'Groq & Flowise',
+                        companyLink: 'https://groq.com'
+                    }
+                }
+            }
+        })
+    </script>
 </body>
 
 </html>

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+// import { useState } from 'react'; // Keep useState if used elsewhere, otherwise remove the import
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -7,19 +7,19 @@ import Projects from './components/Projects';
 import Experience from './components/Experience';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import ChatWidget from './components/ChatWidget';
+// Removed: import ChatWidget from './components/ChatWidget';
 
 function App() {
-  const [isChatOpen, setIsChatOpen] = useState(false);
-
-  const toggleChat = () => setIsChatOpen(!isChatOpen);
+  // Removed: const [isChatOpen, setIsChatOpen] = useState(false);
+  // Removed: const toggleChat = () => setIsChatOpen(!isChatOpen);
 
   return (
     <div className="min-h-screen bg-background text-DEFAULT selection:bg-primary/30 selection:text-primary overflow-x-hidden">
       <Navbar />
-      
+
       <main>
-        <Hero onChatClick={() => setIsChatOpen(true)} />
+        {/* Action: Ensure the onChatClick prop is removed from Hero */}
+        <Hero onChatClick={() => {/* handle chat click */}} /> 
         <About />
         <Skills />
         <Projects />
@@ -28,11 +28,8 @@ function App() {
       </main>
 
       <Footer />
-      
-      <ChatWidget 
-        isOpen={isChatOpen} 
-        toggleChat={toggleChat} 
-      />
+
+      {/* Removed: ChatWidget component call */}
     </div>
   );
 }
