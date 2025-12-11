@@ -85,7 +85,7 @@ export default function Hero({ onChatClick }: HeroProps) {
           >
             <button
               onClick={onChatClick}
-              className="flex items-center gap-3 px-6 py-3 rounded-2xl bg-glass border border-glass-border hover:border-primary/50 transition-all group cursor-pointer"
+              className="hidden flex items-center gap-3 px-6 py-3 rounded-2xl bg-glass border border-glass-border hover:border-primary/50 transition-all group cursor-pointer"
             >
               <div className="p-2 rounded-full bg-primary/20 text-primary group-hover:animate-bounce">
                 <MessageSquare className="w-5 h-5" />

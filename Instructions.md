@@ -82,8 +82,8 @@ export default {
 Replace `vite.config.ts` with:
 
 ```typescript
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -110,7 +110,7 @@ Create a file named `yw_manifest.json` in the root directory:
       "model": "deepseek-v3",
       "temperature": 0.7,
       "maxTokens": 4000,
-      "system_prompt": "You are REN-AI, the personal AI assistant for a Frontend Developer & UI/UX Designer named [Your Name]. \n\nYour goal is to answer questions about the developer's skills, projects, experience, and background based STRICTLY on the following portfolio context. \n\nContext: ${portfolioContext}\n\nIf the user asks something outside of this context, politely steer them back to the portfolio topics. Be professional, enthusiastic, and concise. Use a futuristic and helpful tone."
+      "system_prompt": "You are Tristan, the personal AI assistant for a Frontend Developer & UI/UX Designer named Tristan Howard. \n\nYour goal is to answer questions about the developer's skills, projects, experience, and background based STRICTLY on the following portfolio context. \n\nContext: ${portfolioContext}\n\nIf the user asks something outside of this context, politely steer them back to the portfolio topics. Be professional, enthusiastic, and concise. Use a futuristic and helpful tone."
     }
   }
 }
@@ -213,118 +213,118 @@ Copy the following code into the respective files.
 
 // some global object injected by platform
 declare global {
-  interface Window {
-    aiSdk?: Record<string, any>;
-    ywConfig?: Record<string, any>;
-    ywSdk?: Record<string, any>;
-  }
+    interface Window {
+        aiSdk?: Record<string, any>;
+        ywConfig?: Record<string, any>;
+        ywSdk?: Record<string, any>;
+    }
 }
 
-export {};
+export { };
 ```
 
 ### 3. `src/data/mock.ts`
 
 ```typescript
 export const portfolioData = {
-  personal: {
-    name: "Sons Renai", // Placeholder based on email, user should update
-    role: "Frontend Developer & UI/UX Designer",
-    tagline: "Crafting immersive digital experiences. Exploring IoT. Learning the future of AI.",
-    email: "sonsrenai@gmail.com",
-    phone: "09928571488",
-    social: {
-      github: "https://github.com",
-      linkedin: "https://linkedin.com",
-      facebook: "https://facebook.com"
+    personal: {
+        name: "Tristan Howard", // Placeholder based on email, user should update
+        role: "Frontend Developer & UI/UX Designer",
+        tagline: "Crafting immersive digital experiences. Exploring IoT. Learning the future of AI.",
+        email: "sonsrenai@gmail.com",
+        phone: "09928571488",
+        social: {
+            github: "https://github.com",
+            linkedin: "https://linkedin.com",
+            facebook: "https://facebook.com"
+        },
+        highlights: [
+            "Web Developer",
+            "UI/UX Designer",
+            "BSIT Student",
+            "Full-Stack Developer in Progress",
+            "IoT Enthusiast"
+        ]
     },
-    highlights: [
-      "Web Developer",
-      "UI/UX Designer",
-      "BSIT Student",
-      "Full-Stack Developer in Progress",
-      "IoT Enthusiast"
-    ]
-  },
-  about: {
-    bio: `I’m a BSIT student at the University of Cebu with a deep passion for technology, creativity, and problem-solving. I specialize in frontend web development and UI/UX design, with a growing curiosity for full-stack development using Node.js.
+    about: {
+        bio: `I’m a BSIT student at the University of Cebu with a deep passion for technology, creativity, and problem-solving. I specialize in frontend web development and UI/UX design, with a growing curiosity for full-stack development using Node.js.
 
 Beyond the web, I explore the world of IoT, embedded systems, and AI technologies, which allows me to combine hardware and software into meaningful solutions. I enjoy transforming ideas into digital experiences, whether it’s designing interfaces, building interactive prototypes, or creating systems that solve real-world problems.
 
 Creativity is at the center of my work — I love designing visually appealing layouts, editing graphics, crafting music mixes, and using AI tools to enhance productivity. I’m also a critical and flexible thinker, able to adapt quickly to new tasks, technologies, and environments.
 
 I believe in continuous learning, curiosity-driven development, and building solutions that leave an impact, no matter how small. My goal is to keep growing as a full-stack developer while integrating AI and IoT into my future projects.`
-  },
-  skills: [
-    { name: "Graphic Designing", description: "Creating visually stunning assets and layouts." },
-    { name: "AI Prompting", description: "Leveraging AI for enhanced productivity and creativity." },
-    { name: "Music Editing", description: "Crafting audio mixes and soundscapes." },
-    { name: "Critical & Creative Thinking", description: "Solving problems with innovative approaches." },
-    { name: "Flexible & Task-Oriented", description: "Adapting to new challenges efficiently." },
-    { name: "Web Development", description: "HTML, CSS, JS, React, Node.js." },
-    { name: "UI/UX Design", description: "Figma, prototyping, user-centered design." }
-  ],
-  projects: [
-    {
-      category: "IoT & Embedded Systems",
-      items: [
+    },
+    skills: [
+        { name: "Graphic Designing", description: "Creating visually stunning assets and layouts." },
+        { name: "AI Prompting", description: "Leveraging AI for enhanced productivity and creativity." },
+        { name: "Music Editing", description: "Crafting audio mixes and soundscapes." },
+        { name: "Critical & Creative Thinking", description: "Solving problems with innovative approaches." },
+        { name: "Flexible & Task-Oriented", description: "Adapting to new challenges efficiently." },
+        { name: "Web Development", description: "HTML, CSS, JS, React, Node.js." },
+        { name: "UI/UX Design", description: "Figma, prototyping, user-centered design." }
+    ],
+    projects: [
         {
-          title: "Basic Sensor Circuits",
-          tools: ["Arduino", "Sensors", "C++"],
-          description: "Fundamental experiments with various sensors and actuators."
+            category: "IoT & Embedded Systems",
+            items: [
+                {
+                    title: "Basic Sensor Circuits",
+                    tools: ["Arduino", "Sensors", "C++"],
+                    description: "Fundamental experiments with various sensors and actuators."
+                },
+                {
+                    title: "Microcontroller-based Systems",
+                    tools: ["ESP32", "IoT", "C++"],
+                    description: "Smart systems integrated with cloud connectivity."
+                },
+                {
+                    title: "Device Automation Experiments",
+                    tools: ["Home Assistant", "MQTT"],
+                    description: "Automating daily tasks using smart devices."
+                }
+            ]
         },
         {
-          title: "Microcontroller-based Systems",
-          tools: ["ESP32", "IoT", "C++"],
-          description: "Smart systems integrated with cloud connectivity."
-        },
-        {
-          title: "Device Automation Experiments",
-          tools: ["Home Assistant", "MQTT"],
-          description: "Automating daily tasks using smart devices."
+            category: "Web Projects",
+            items: [
+                {
+                    title: "Academic Static Websites",
+                    tools: ["HTML", "CSS", "JS"],
+                    description: "Showcase of academic achievements and activities."
+                },
+                {
+                    title: "Election Management System",
+                    tools: ["PHP", "MySQL", "Bootstrap"],
+                    description: "A system to manage and track student elections."
+                },
+                {
+                    title: "Event Organizer System",
+                    tools: ["React", "Node.js", "MongoDB"],
+                    description: "Platform for planning and managing events."
+                },
+                {
+                    title: "Weathering Web-App",
+                    tools: ["React", "OpenWeatherMap API"],
+                    description: "Real-time weather forecasting application."
+                }
+            ]
         }
-      ]
-    },
-    {
-      category: "Web Projects",
-      items: [
+    ],
+    experience: [
         {
-          title: "Academic Static Websites",
-          tools: ["HTML", "CSS", "JS"],
-          description: "Showcase of academic achievements and activities."
+            title: "Networking (Cisco)",
+            description: "Basic network configuration, routing, switches, topologies."
         },
         {
-          title: "Election Management System",
-          tools: ["PHP", "MySQL", "Bootstrap"],
-          description: "A system to manage and track student elections."
+            title: "UI/UX Design Contests",
+            description: "Participated and created modern design layouts."
         },
         {
-          title: "Event Organizer System",
-          tools: ["React", "Node.js", "MongoDB"],
-          description: "Platform for planning and managing events."
-        },
-        {
-          title: "Weathering Web-App",
-          tools: ["React", "OpenWeatherMap API"],
-          description: "Real-time weather forecasting application."
+            title: "Bitcoin-related Events",
+            description: "Tech events, blockchain exposure, and fintech environment."
         }
-      ]
-    }
-  ],
-  experience: [
-    {
-      title: "Networking (Cisco)",
-      description: "Basic network configuration, routing, switches, topologies."
-    },
-    {
-      title: "UI/UX Design Contests",
-      description: "Participated and created modern design layouts."
-    },
-    {
-      title: "Bitcoin-related Events",
-      description: "Tech events, blockchain exposure, and fintech environment."
-    }
-  ]
+    ]
 };
 ```
 
@@ -334,25 +334,25 @@ I believe in continuous learning, curiosity-driven development, and building sol
 import { useState, useEffect } from 'react';
 
 export function useTheme() {
-  const [theme, setTheme] = useState<'light' | 'dark'>(() => {
-    if (typeof window !== 'undefined') {
-      return localStorage.getItem('theme') as 'light' | 'dark' || 'dark';
-    }
-    return 'dark';
-  });
+    const [theme, setTheme] = useState<'light' | 'dark'>(() => {
+        if (typeof window !== 'undefined') {
+            return localStorage.getItem('theme') as 'light' | 'dark' || 'dark';
+        }
+        return 'dark';
+    });
 
-  useEffect(() => {
-    const root = window.document.documentElement;
-    root.classList.remove('light', 'dark');
-    root.classList.add(theme);
-    localStorage.setItem('theme', theme);
-  }, [theme]);
+    useEffect(() => {
+        const root = window.document.documentElement;
+        root.classList.remove('light', 'dark');
+        root.classList.add(theme);
+        localStorage.setItem('theme', theme);
+    }, [theme]);
 
-  const toggleTheme = () => {
-    setTheme(prev => prev === 'dark' ? 'light' : 'dark');
-  };
+    const toggleTheme = () => {
+        setTheme(prev => prev === 'dark' ? 'light' : 'dark');
+    };
 
-  return { theme, toggleTheme };
+    return { theme, toggleTheme };
 }
 ```
 
@@ -360,82 +360,134 @@ export function useTheme() {
 
 ```typescript
 import { useState, useCallback } from 'react';
-import { generateText } from 'ai';
+import { generateText, type CoreMessage } from 'ai'; // Added CoreMessage import
 import { createOpenAI } from '@ai-sdk/openai';
 import { portfolioData } from '../data/mock';
 
+// 1. Define Message shape for your UI
 export interface Message {
-  role: 'user' | 'assistant' | 'system';
-  content: string;
+    role: 'user' | 'assistant' | 'system';
+    content: string;
 }
 
+// 2. Define Configuration shapes explicitly
+// This fixes the "property does not exist on type unknown" errors
+type YWSceneConfig = {
+    apiKey?: string;
+    // We define system_prompt as a function so we can call it later
+    system_prompt?: (vars: Record<string, string>) => string;
+    model?: string;
+    temperature?: number;
+    maxTokens?: number;
+    [k: string]: unknown;
+};
+
+type YWConfig = {
+    ai_config?: Record<string, YWSceneConfig>;
+    [k: string]: unknown;
+};
+
 export function useChat(sceneName = 'portfolio_assistant') {
-  const [messages, setMessages] = useState<Message[]>([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
+    const [messages, setMessages] = useState<Message[]>([]);
+    const [isLoading, setIsLoading] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
 
-  const toggleChat = () => setIsOpen(!isOpen);
+    const toggleChat = () => setIsOpen(!isOpen);
 
-  const sendMessage = useCallback(async (userMessage: string) => {
-    // @ts-ignore
-    const config = globalThis.ywConfig?.ai_config?.[sceneName];
-    if (!config) {
-      console.error(`API Error - Configuration '${sceneName}' not found`);
-      // Fallback for development if config is missing (though it shouldn't be)
-      return;
-    }
+    const sendMessage = useCallback(async (userMessage: string) => {
+        // 3. Access global config with the specific type definition
+        const globalConfig = (globalThis as unknown as { ywConfig?: YWConfig }).ywConfig;
+        const config = globalConfig?.ai_config?.[sceneName];
 
-    setIsLoading(true);
+        if (!config) {
+            console.error(`API Error - Configuration '${sceneName}' not found`);
+            return;
+        }
 
-    // Add user message to history
-    const newUserMessage: Message = { role: 'user', content: userMessage };
-    setMessages(prev => [...prev, newUserMessage]);
+        setIsLoading(true);
 
-    const openai = createOpenAI({
-      baseURL: 'https://api.youware.com/public/v1/ai',
-      apiKey: 'sk-YOUWARE'
-    });
+        // Add user message to UI state immediately
+        const newUserMessage: Message = { role: 'user', content: userMessage };
+        setMessages(prev => [...prev, newUserMessage]);
 
-    try {
-      // Prepare context variables
-      const variables = {
-        portfolioContext: JSON.stringify(portfolioData, null, 2)
-      };
+        const openai = createOpenAI({
+            baseURL: 'https://api.youware.com/public/v1/ai',
+            apiKey: 'sk-YOUWARE'
+        });
 
-      const systemPrompt = config.system_prompt ? config.system_prompt(variables) : '';
+        try {
+            // Prepare context variables
+            const variables = {
+                portfolioContext: JSON.stringify(portfolioData, null, 2)
+            };
 
-      const { text } = await generateText({
-        model: openai(config.model),
-        messages: [
-          ...(systemPrompt ? [{ role: 'system', content: systemPrompt }] : []),
-          ...messages, // Include full conversation context
-          newUserMessage
-        ],
-        temperature: config.temperature || 0.7,
-        maxTokens: config.maxTokens || 4000
-      });
+            // Generate system prompt (safe now because we typed config correctly)
+            const systemPrompt = config.system_prompt ? config.system_prompt(variables) : '';
 
-      // Add AI response to history
-      const assistantMessage: Message = { role: 'assistant', content: text };
-      setMessages(prev => [...prev, assistantMessage]);
+            // 4. Helper functions for Normalization
+            // We removed 'tool' since you confirmed this is text-only chat
+            const allowedRoles = ['user', 'assistant', 'system'] as const;
+            type AllowedRole = typeof allowedRoles[number];
 
-    } catch (error: any) {
-      console.error(`API Error - Conversation failed: ${error.message}`);
-      const errorMessage: Message = { role: 'assistant', content: "I'm having trouble connecting right now. Please try again later." };
-      setMessages(prev => [...prev, errorMessage]);
-    } finally {
-      setIsLoading(false);
-    }
-  }, [sceneName, messages]);
+            const isRole = (r: unknown): r is AllowedRole =>
+                typeof r === 'string' && (allowedRoles as readonly string[]).includes(r);
 
-  return {
-    messages,
-    sendMessage,
-    isLoading,
-    isOpen,
-    toggleChat,
-    setIsOpen
-  };
+            const normalizeContent = (c: unknown): string =>
+                typeof c === 'string' ? c : JSON.stringify(c);
+
+            // 5. Construct the message array safely
+            // We cast to `CoreMessage[]` at the end to satisfy the SDK requirements
+            const safeMessages = [
+                ...(systemPrompt ? [{ role: 'system', content: String(systemPrompt) }] : []),
+                ...messages.map((m) => {
+                    const obj = m as { role?: unknown; content?: unknown };
+                    return {
+                        // Fallback to 'user' if the role looks weird, preventing crashes
+                        role: isRole(obj.role) ? obj.role : 'user',
+                        content: normalizeContent(obj.content)
+                    };
+                }),
+                {
+                    role: 'user',
+                    content: normalizeContent(newUserMessage.content)
+                }
+            ] as CoreMessage[];
+
+            const { text } = await generateText({
+                // Fallback to 'gpt-4o' if config.model is missing
+                model: openai(config.model || 'gpt-4o'),
+                messages: safeMessages,
+                // These are now valid numbers because YWSceneConfig defined them as such
+                temperature: config.temperature ?? 0.7,
+                maxOutputTokens: config.maxTokens ?? 4000
+            });
+
+            // Add AI response to history
+            const assistantMessage: Message = { role: 'assistant', content: text };
+            setMessages(prev => [...prev, assistantMessage]);
+
+        } catch (error: unknown) {
+            const message = error instanceof Error ? error.message : String(error);
+            console.error(`API Error - Conversation failed: ${message}`);
+
+            const errorMessage: Message = {
+                role: 'assistant',
+                content: "I'm having trouble connecting right now. Please try again later."
+            };
+            setMessages(prev => [...prev, errorMessage]);
+        } finally {
+            setIsLoading(false);
+        }
+    }, [sceneName, messages]);
+
+    return {
+        messages,
+        sendMessage,
+        isLoading,
+        isOpen,
+        toggleChat,
+        setIsOpen
+    };
 }
 ```
 
@@ -713,7 +765,7 @@ export default function About() {
               {/* Placeholder for user portrait */}
               <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background/80 z-10" />
               <img
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop"
+                src="https://res.cloudinary.com/deua2yipj/image/upload/v1765308182/MySelf_tlcxnq.jpg"
                 alt="Portrait"
                 className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-100 group-hover:scale-110"
               />
@@ -750,7 +802,7 @@ import { motion } from 'framer-motion';
 import { portfolioData } from '../data/mock';
 import { Cpu, Palette, Music, Brain, Zap, Code, Layout } from 'lucide-react';
 
-const iconMap: Record<string, any> = {
+const iconMap: Record<string, typeof Cpu> = {
   "Graphic Designing": Palette,
   "AI Prompting": Brain,
   "Music Editing": Music,
@@ -1068,7 +1120,7 @@ export default function Footer() {
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MessageSquare, X, Send, Bot, User } from 'lucide-react';
-import { useChat, Message } from '../hooks/useChat';
+import { useChat } from '../hooks/useChat';
 import { clsx } from 'clsx';
 
 interface ChatWidgetProps {

@@ -58,6 +58,7 @@
 @layer utilities {
   .bg-glass {
     background-color: rgba(var(--color-glass), var(--opacity-glass));
+    -webkit-backdrop-filter: blur(12px);
     backdrop-filter: blur(12px);
   }
 
