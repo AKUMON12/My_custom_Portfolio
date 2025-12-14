@@ -17,7 +17,7 @@
         // Initialize the Flowise embed and expose a global helper so the React app
         // can open/toggle the chat from components (e.g. Hero button).
         Chatbot.init({
-            chatflowid: "47f7f67a-2508-4b74-8e3e-dd6bb1a3c276",
+            chatflowid: "6e2c94e4-0261-4a4b-b52a-7ba0f8c540fa",
             apiHost: "https://cloud.flowiseai.com",
             theme: {
                 // --- BUTTON CONFIG ---
@@ -79,24 +79,24 @@
                 /* customCSS property is now REMOVED */
             }
         })
-        .then(function(instance){
-            // Expose a small global helper object: window.FlowiseChat.open()/toggle()
-            try{
-                window.FlowiseChat = {
-                    instance: instance,
-                    open: (typeof instance?.open === 'function') ? function(){ instance.open(); } : function(){
-                        var btn = document.querySelector('[data-flowise-open]') || document.querySelector('.flowise-embed-open') || document.querySelector('button[aria-label="Open chat"]');
-                        if (btn instanceof HTMLElement) btn.click();
-                    },
-                    toggle: (typeof instance?.toggle === 'function') ? function(){ instance.toggle(); } : undefined
-                };
-            }catch(e){
-                console.warn('Could not attach FlowiseChat helper', e);
-            }
-        })
-        .catch(function(err){
-            console.error('Flowise init failed', err);
-        });
+            .then(function (instance) {
+                // Expose a small global helper object: window.FlowiseChat.open()/toggle()
+                try {
+                    window.FlowiseChat = {
+                        instance: instance,
+                        open: (typeof instance?.open === 'function') ? function () { instance.open(); } : function () {
+                            var btn = document.querySelector('[data-flowise-open]') || document.querySelector('.flowise-embed-open') || document.querySelector('button[aria-label="Open chat"]');
+                            if (btn instanceof HTMLElement) btn.click();
+                        },
+                        toggle: (typeof instance?.toggle === 'function') ? function () { instance.toggle(); } : undefined
+                    };
+                } catch (e) {
+                    console.warn('Could not attach FlowiseChat helper', e);
+                }
+            })
+            .catch(function (err) {
+                console.error('Flowise init failed', err);
+            });
     </script>
 </body>
 
